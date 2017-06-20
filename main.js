@@ -7,11 +7,14 @@ var p2Diplay = document.querySelector("#p2Display");
 var resetButton = document.querySelector("#reset");
 var gameOver = false;
 var winningScore = 5;
-
+var numInput = document.querySelector("input");
+var newScore = 0;
+var playingTo = document.getElementById("playingTo");
 
 p1Button.addEventListener("click", function(){
 	if (!gameOver) {
 		p1Score++;
+		console.log(p1Score, winningScore);
 		if(p1Score === winningScore) {
 			p1Display.classList.add("winner");
 			gameOver = true;
@@ -39,4 +42,14 @@ resetButton.addEventListener("click", function(){
 	p1Display.classList.remove("winner");
 	p2Display.classList.remove("winner");
 	gameOver = false;
+});
+
+numInput.addEventListener("change", function(){
+	numInput.addEventListener("click", function(){
+		newScore++;
+	});
+	
+	playingTo.textContent = numInput.value;
+	winningScore = numInput.value;
+	console.log(winningScore);
 });
