@@ -14,7 +14,6 @@ var playingTo = document.getElementById("playingTo");
 p1Button.addEventListener("click", function(){
 	if (!gameOver) {
 		p1Score++;
-		console.log(p1Score, winningScore);
 		if(p1Score === winningScore) {
 			p1Display.classList.add("winner");
 			gameOver = true;
@@ -50,6 +49,5 @@ numInput.addEventListener("change", function(){
 	});
 	
 	playingTo.textContent = numInput.value;
-	winningScore = numInput.value;
-	console.log(winningScore);
+	winningScore = Number(numInput.value);
 });
